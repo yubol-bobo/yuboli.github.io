@@ -166,6 +166,23 @@
 {% if page.toc and page.toc.sidebar %}
   <!-- Sidebar Table of Contents -->
   <script defer src="{{ '/assets/js/bootstrap-toc.min.js' | relative_url | bust_file_cache }}"></script>
+  <script>
+    // Configure bootstrap-toc with proper offset for fixed navbar
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof Toc !== 'undefined') {
+        Toc.init({
+          $nav: $("#toc"),
+          $scope: $("article"),
+          offset: 100
+        });
+      }
+      // Also configure Bootstrap scrollspy offset
+      $('body').scrollspy({ 
+        target: '#toc',
+        offset: 100
+      });
+    });
+  </script>
 {% endif %}
 
 {% if page.pretty_table %}

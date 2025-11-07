@@ -8,7 +8,7 @@ nav_order: 7
 ---
 
 <!-- Section 1: Life Moments Gallery -->
-## 📸 Life Moments
+## ✨ Moments That Stay
 
 <style>
   .life-moments .card-img-top {
@@ -31,7 +31,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/1.jpg" class="card-img-top" alt="Life moment 1" %}
       <div class="card-body">
-        <p class="card-text">Description of this life moment. Share your story, experience, or memory here.</p>
+        <p class="card-text">Home is wherever I’m with them — Dali, Yunnan.</p>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/2.jpg" class="card-img-top" alt="Life moment 2" %}
       <div class="card-body">
-        <p class="card-text">Another meaningful moment from your journey. Add your personal touch here.</p>
+        <p class="card-text">Found geometry in Kunming.</p>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/3.jpg" class="card-img-top" alt="Life moment 3" %}
       <div class="card-body">
-        <p class="card-text">Share another experience, adventure, or special memory that defines your journey.</p>
+        <p class="card-text">A small bubble, a big memory - California</p>
       </div>
     </div>
   </div>
@@ -61,7 +61,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/4.jpg" class="card-img-top" alt="Life moment 4" %}
       <div class="card-body">
-        <p class="card-text">Tell your story. What makes this moment special to you?</p>
+        <p class="card-text">A joyful corner with my love - Weiyi</p>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/5.jpg" class="card-img-top" alt="Life moment 5" %}
       <div class="card-body">
-        <p class="card-text">Continue sharing your meaningful experiences and memories here.</p>
+        <p class="card-text">The river whispering goodnight to Cincinnati.</p>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/6.jpg" class="card-img-top" alt="Life moment 6" %}
       <div class="card-body">
-        <p class="card-text">Add as many cards as you like to showcase your life journey!</p>
+        <p class="card-text">Mount Rainier, twice!</p>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@ nav_order: 7
 ---
 
 <!-- Section 2: Travel Map -->
-## 🗺️ Places I've Been
+## 🌍 Places I've Visited
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
@@ -214,32 +214,207 @@ legend.addTo(map);
 
 ---
 
-<!-- Section 3: Additional Life Content -->
-## 📸 Memories & Experiences
+<!-- Section 3: 30-Day Challenge Tracker -->
+## 🎯 Habits I'm Building
 
-Share your favorite memories, hobbies, or experiences here. This could include:
-- Photos from your travels
-- Life milestones
-- Hobbies and interests
-- Personal achievements
-- Or anything else you'd like to share!
+<style>
+  .challenge-tracker {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .challenge-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .challenge-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--global-theme-color);
+    margin-bottom: 10px;
+  }
+  .challenge-progress {
+    font-size: 0.9rem;
+    color: var(--global-text-color);
+  }
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .day-box {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--global-divider-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+  .day-box.completed {
+    background-color: var(--global-theme-color);
+    color: white;
+    border-color: var(--global-theme-color);
+  }
+  .day-box.today {
+    border-color: var(--global-theme-color);
+    border-width: 3px;
+  }
+  .day-number {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .challenge-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--global-bg-color);
+    border-radius: 10px;
+    border: 1px solid var(--global-divider-color);
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--global-theme-color);
+  }
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    margin-top: 5px;
+  }
+</style>
+
+<div class="challenge-tracker">
+  <!-- Challenge Header -->
+  <div class="challenge-header">
+    <div class="challenge-title">📚 30-day Habit Challenge</div>
+    <div class="challenge-progress">2025-11 Getting up before 6:30 am</div>
+  </div>
+
+  <!-- Days Grid -->
+  <div class="days-grid">
+    <!-- Day 1-30 -->
+    <div class="day-box completed" title="Day 1 - Completed">
+      <div class="day-number">1</div>
+    </div>
+    <div class="day-box completed" title="Day 2 - Completed">
+      <div class="day-number">2</div>
+    </div>
+    <div class="day-box completed" title="Day 3 - Completed">
+      <div class="day-number">3</div>
+    </div>
+    <div class="day-box completed" title="Day 4 - Completed">
+      <div class="day-number">4</div>
+    </div>
+    <div class="day-box completed" title="Day 5 - Completed">
+      <div class="day-number">5</div>
+    </div>
+    <div class="day-box today" title="Day 6 - Today">
+      <div class="day-number">6</div>
+    </div>
+    <div class="day-box" title="Day 7">
+      <div class="day-number">7</div>
+    </div>
+    <div class="day-box" title="Day 8">
+      <div class="day-number">8</div>
+    </div>
+    <div class="day-box" title="Day 9">
+      <div class="day-number">9</div>
+    </div>
+    <div class="day-box" title="Day 10">
+      <div class="day-number">10</div>
+    </div>
+    <div class="day-box" title="Day 11">
+      <div class="day-number">11</div>
+    </div>
+    <div class="day-box" title="Day 12">
+      <div class="day-number">12</div>
+    </div>
+    <div class="day-box" title="Day 13">
+      <div class="day-number">13</div>
+    </div>
+    <div class="day-box" title="Day 14">
+      <div class="day-number">14</div>
+    </div>
+    <div class="day-box" title="Day 15">
+      <div class="day-number">15</div>
+    </div>
+    <div class="day-box" title="Day 16">
+      <div class="day-number">16</div>
+    </div>
+    <div class="day-box" title="Day 17">
+      <div class="day-number">17</div>
+    </div>
+    <div class="day-box" title="Day 18">
+      <div class="day-number">18</div>
+    </div>
+    <div class="day-box" title="Day 19">
+      <div class="day-number">19</div>
+    </div>
+    <div class="day-box" title="Day 20">
+      <div class="day-number">20</div>
+    </div>
+    <div class="day-box" title="Day 21">
+      <div class="day-number">21</div>
+    </div>
+    <div class="day-box" title="Day 22">
+      <div class="day-number">22</div>
+    </div>
+    <div class="day-box" title="Day 23">
+      <div class="day-number">23</div>
+    </div>
+    <div class="day-box" title="Day 24">
+      <div class="day-number">24</div>
+    </div>
+    <div class="day-box" title="Day 25">
+      <div class="day-number">25</div>
+    </div>
+    <div class="day-box" title="Day 26">
+      <div class="day-number">26</div>
+    </div>
+    <div class="day-box" title="Day 27">
+      <div class="day-number">27</div>
+    </div>
+    <div class="day-box" title="Day 28">
+      <div class="day-number">28</div>
+    </div>
+    <div class="day-box" title="Day 29">
+      <div class="day-number">29</div>
+    </div>
+    <div class="day-box" title="Day 30">
+      <div class="day-number">30</div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="challenge-stats">
+    <div class="stat-item">
+      <div class="stat-value">5</div>
+      <div class="stat-label">Days Completed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">25</div>
+      <div class="stat-label">Days Remaining</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">17%</div>
+      <div class="stat-label">Progress</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align: center; margin-top: 40px;">
+  <a href="{{ '/challenges/' | relative_url }}" class="btn btn-primary btn-lg">
+    📊 View All Challenges & Progress →
+  </a>
+</div>
 
 ---
-
-## How to Add Cities
-
-To add more cities to the map, edit the `cities` array in the code above. Here's the format:
-
-```javascript
-{name: "City Name", lat: latitude, lng: longitude, note: "Your note"},
-```
-
-**Finding Coordinates:**
-- Visit [LatLong.net](https://www.latlong.net/)
-- Search for your city
-- Copy the latitude and longitude
-
-**Icon Colors:**
-- 🔴 Red: Cities where you're currently living (notes containing "living")
-- 🟢 Green: Hometown (notes containing "hometown")
-- 🔵 Blue: All other cities (visited, studied, etc.)

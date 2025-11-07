@@ -1,18 +1,13 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Yubo Li",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "yubol@andrew.cmu.edu",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      "postalCode": "PA 15213",
+      "city": "Pittsburgh",
       "countryCode": "US",
-      "region": "California"
+      "region": "PA"
     },
     "profiles": [
       {
@@ -22,136 +17,139 @@
       }
     ]
   },
-  "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "Carnegie Mellon University",
+      "location": "Pittsburgh, PA",
+      "url": "https://www.cmu.edu/",
+      "area": "Information Systems",
+      "studyType": "Ph.D.",
+      "startDate": "2022-08-29",
+      "endDate": "now",
+      "score": "10"
+    },
+    {
+      "institution": "Carnegie Mellon University",
+      "location": "Pittsburgh, PA",
+      "url": "https://www.cmu.edu/",
+      "area": "Information Systems",
+      "studyType": "M.S.",
+      "startDate": "2020-08-31",
+      "endDate": "2021-12-31",
+      "score": "10"
+    },
+    {
+      "institution": "University of California, San Diego",
+      "location": "La Jolla, CA",
+      "url": "https://www.ucsd.edu/",
+      "area": "Applied Mathematics | Business",
+      "studyType": "B.S.",
+      "startDate": "2015-09-15",
+      "endDate": "2019-06-15",
+      "score": "10"
     }
   ],
+  "work": [
+    {
+      "name": "Amazon",
+      "position": "Applied Scientist Intern",
+      "startDate": "2025-06-02",
+      "endDate": "2025-08-22",
+      "summary": "Led end-to-end development of a generative recommendation system by pre-training a custom user encoder on 172k interaction sequences and progressively aligning it with LLMs, achieving strong gains over prompting baselines (Hit@3 60.1%, NDCG@3 67.5%) with 93.4% fewer tokens and 64.8% lower cost. Built a production-ready RAG/search pipeline with FAISS HNSW over 60k user embeddings and implemented distributed multi-GPU training with FSDP and BF16 mixed precision to scale training and inference efficiently."
+    },
+    {
+      "name": "HireBeat",
+      "position": "Data Scientist",
+      "startDate": "2019-10-02",
+      "endDate": "2020-03-22",
+      "summary": "Leveraged machine learning and NLP techniques to develop a data analysis pipeline that optimized content recommendation algorithms, significantly improving personalization accuracy and user engagement."
+    },
+    {
+      "name": "R-Eat",
+      "position": "Founder",
+      "startDate": "2012-07-02",
+      "endDate": "2014-05-22",
+      "summary": "Entrepreneurship: Founded and grew an online food delivery business by enhancing customer experience through UI optimization and personalized marketing, resulting in a 60% sales increase and a loyal customer base of over 2,000."
+    }
+  ],
+  
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "title": "TCS Presidential Fellowship",
+      "date": "2025",
+      "awarder": "Carnegie Mellon University"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "title": "CMLH Fellowship in Generative AI in Healthcare",
+      "date": "2024",
+      "awarder": "Center for Machine Learning and Health, Carnegie Mellon University",
+      "url": "https://mlh.cmu.edu/fellowships/generative-ai-in-healthcare-fellowship/"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "title": "CMU Heinz College Research Excellence Award",
+      "date": "2023",
+      "awarder": "Center for Machine Learning and Health, Carnegie Mellon University",
+      "url": "https://www.cs.cmu.edu/cmlh/digital-health-archive/cmlh-digital-health-fellows-2023"
     }
   ],
   "skills": [
     {
-      "name": "Physics",
+      "name": "Programming Languages",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Python",
+        "Java",
+        "SQL",
+        "R"
       ]
-    }
+    },
+    {
+      "name": "Technologies & Frameworks",
+      "level": "Master",
+      "icon": "fa-solid fa-gears",
+      "keywords": [
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn",
+        "Pandas",
+        "NumPy",
+        "AWS"
+      ]
+    },
+    {
+      "name": "Large Language Models",
+      "level": "Master",
+      "icon": "fa-solid fa-brain ",
+      "keywords": [
+        "Prompting Optimization",
+        "RAG",
+        "Fine-tuning",
+        "LoRA",
+        "RLHF",
+        "Model Distillation",
+        "Evaluation Metrics",
+        "Parallel Training",
+        "Agentic Frameworks"
+      ]
+    },
+    {
+      "name": "Machine Learning & Deep Learning",
+      "level": "Master",
+      "icon": "fa-solid fa-chart-line",  
+      "keywords": [
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Predictive Modeling",
+        "Natural Language Processing",
+        "Time Series Analysis",
+        "Model Interpretability"
+      ]}
   ],
+  
   "languages": [
     {
-      "language": "German",
+      "language": "Mandarin",
       "fluency": "Native speaker",
       "icon": ""
     },
@@ -161,40 +159,34 @@
       "icon": ""
     }
   ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    },
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "Agentic Q&A Systems for Trustworthy Organ Transplantation Guidance",
+      "highlights": ["Q&A System: Developed Q&A systems for organ transplantation patient care by integrating retrieval-augmented generation (RAG) with adaptive frameworks that synthesize patient-specific medical history, clinical guidelines, and dynamic risk factors to deliver tailored guidance and support.",
+          "RAG/Retriever: Engineered a hybrid retrieval pipeline combining both sparse and dense retrievers (DPR, ANCE) to accurately extract and verify medical content from over 100 transplant-specific handbooks.",
+          "LLM Reasoning Framework: Developed an incentivized reasoning mechanism that optimizes LLM performance by rewarding multi-step chain-of-question sequences, enabling the system to reason freely and proactively request critical diagnostic information."],
+      "startDate": "2025-01-01",
+      "endDate": "Present"
+    },
+    {
+      "name": "LLM Alignment & Multi-Turn Consistency",
+      "highlights": [
+        "Distributed Training: Architected and optimized distributed training infrastructure for LLMs (Mistral, LLaMA, Deepseek) across 4 nodes with 16 NVIDIA GH200 GPUs, implementing tensor parallelism, pipeline parallelism, and ZeRO optimizer techniques to efficiently scale model training and reduce computational overhead.",
+        "Fine-tuning: Performed fine-tuning of state-of-the-art LLMs both locally (on-premises clusters) and via OpenAI's official GPT-4o API, successfully improving model consistency, confidence-aware reasoning, and achieving state-of-the-art performance.",
+        "Evaluation: Proposed a metric to quantitatively assess multi-turn response stability, prioritizing early interaction accuracy and swift recovery from initial errors. Released a comprehensive benchmark to test the model's ability to sustain coherent and contextually accurate responses during dynamic, multi-turn conversations."
+      ],
+      "startDate": "2024-05-01",
+      "endDate": "Present"
+    },
+    {
+      "name": "Chronic Kidney Disease Progression Analysis with DL & XAI",
+      "highlights":[
+        "Deep Learning: Developed Temporal-Feature Cross Attention Mechanism (TFCAM), an attention-based deep learning framework that explicitly captures temporal and feature-level interactions to enhance clinical predictive modeling for Chronic Kidney Disease (CKD) progression.",
+        "XAI: Provided multi-level explainability including temporal insights, feature importance ranking, and cross-temporal feature interactions, enabling clinicians to interpret model predictions transparently and identify actionable clinical insights.",
+        "Enhanced Representation & Delivery: Designed an interactive, user-friendly dashboard GUI accessible to diverse user groups; integrated LLMs to automatically generate clear, insightful summaries of predictions and model interpretations, enhancing usability and clinical decision-making support."
+      ],
+      "startDate": "2022-07-01",
+      "endDate": "2025-7-31"
     }
   ]
 }
