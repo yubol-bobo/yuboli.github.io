@@ -281,7 +281,7 @@ nav_order: 7
     </div>
 
     <div class="note">
-      💡 <strong>Tip:</strong> You can enter multiple words separated by commas, or submit one word at a time. The more a word is submitted, the larger it appears!
+      💡 <strong>Tip:</strong> You can enter multiple words separated by commas, or submit one word at a time. If a word has more than one part (e.g., warm-smiling), connect the parts with a hyphen instead of a space.
     </div>
   </div>
 
