@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Teaching Assistant for graduate-level courses at Carnegie Mellon University.
+description: If you want to master something, teach it. -- Richard Phillips Feynman
 nav: true
 nav_order: 6
 ---

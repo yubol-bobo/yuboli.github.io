@@ -290,7 +290,6 @@ nav_order: 7
   </div>
 
   <div class="cloud-section">
-    <h3>☁️ Word Cloud</h3>
     <div id="wordCloud">
       <div class="empty-state">
         Be the first to share your impression! 🌟
