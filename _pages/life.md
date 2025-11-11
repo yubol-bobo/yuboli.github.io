@@ -61,7 +61,7 @@ nav_order: 7
     <div class="card h-100 hoverable">
       {% include figure.liquid loading="eager" path="assets/img/life/4.jpg" class="card-img-top" alt="Life moment 4" %}
       <div class="card-body">
-        <p class="card-text">A joyful corner with my love - Weiyi</p>
+        <p class="card-text">A joyful corner with <a href="https://weiyisongsoprano.github.io/" target="_blank">my love - Weiyi</a></p>
       </div>
     </div>
   </div>
