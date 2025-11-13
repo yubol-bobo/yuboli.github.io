@@ -19,13 +19,18 @@ nav_order: 8
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
 
     <!-- Send a Message Card -->
-    <div class="contact-option-card" style="padding: 2rem; background-color: var(--global-bg-color); border: 1px solid var(--global-divider-color); border-radius: 8px;">
+    <div id="message-card" class="contact-option-card" style="padding: 2rem; background-color: var(--global-bg-color); border: 1px solid var(--global-divider-color); border-radius: 8px; cursor: pointer;">
       <div style="text-align: center; margin-bottom: 1.5rem;">
         <i class="fas fa-envelope" style="font-size: 3rem; color: var(--global-theme-color);"></i>
         <h3 style="margin-top: 1rem; margin-bottom: 0.5rem;">Send a Message</h3>
         <p style="color: var(--global-text-color-light); font-size: 0.9rem;">
           Have a question or want to collaborate? Drop me a message and I'll get back to you soon.
         </p>
+      </div>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" style="width: 100%;">
+          <i class="fas fa-paper-plane"></i> Write Message
+        </button>
       </div>
     </div>
 
@@ -125,7 +130,28 @@ nav_order: 8
     const openBtn = document.getElementById('open-scheduler-btn');
     const closeBtn = document.getElementById('close-scheduler-btn');
     const modal = document.getElementById('scheduler-modal');
+    const messageCard = document.getElementById('message-card');
+    const contactFormSection = document.getElementById('contact-form-section');
 
+    // Handle "Send a Message" card click
+    if (messageCard && contactFormSection) {
+      messageCard.addEventListener('click', function() {
+        contactFormSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+        // Optional: Focus on the first input field after scrolling
+        setTimeout(function() {
+          const firstInput = contactFormSection.querySelector('input[type="text"]');
+          if (firstInput) {
+            firstInput.focus();
+          }
+        }, 500);
+      });
+    }
+
+    // Handle "Schedule a Meeting" button click
     if (openBtn) {
       openBtn.addEventListener('click', function() {
         modal.style.display = 'block';
