@@ -38,33 +38,78 @@ nav_order: 2
     const getThemeColor = (cssVar, fallback) => {
       return getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim() || fallback;
     };
+
+    // Helper function to check if current theme is dark
+    const isDarkTheme = () => {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    };
+
+    // Helper function to get bar colors based on venue and theme
+    const getBarColors = () => {
+      const isDark = isDarkTheme();
+      const venues = Object.keys(reviewData);
+      const colors = {
+        background: [],
+        border: [],
+        hover: []
+      };
+
+      venues.forEach(venue => {
+        if (venue === 'NeurIPS' && isDark) {
+          // Red color for NeurIPS in dark theme
+          colors.background.push('rgba(239, 83, 80, 0.7)');
+          colors.border.push('rgba(239, 83, 80, 1)');
+          colors.hover.push('rgba(239, 83, 80, 0.9)');
+        } else if (venue === 'AMIA') {
+          colors.background.push('rgba(54, 162, 235, 0.7)');
+          colors.border.push('rgba(54, 162, 235, 1)');
+          colors.hover.push('rgba(54, 162, 235, 0.9)');
+        } else if (venue === 'ACM') {
+          colors.background.push('rgba(255, 99, 132, 0.7)');
+          colors.border.push('rgba(255, 99, 132, 1)');
+          colors.hover.push('rgba(255, 99, 132, 0.9)');
+        } else if (venue === 'Health Informatics') {
+          colors.background.push('rgba(75, 192, 192, 0.7)');
+          colors.border.push('rgba(75, 192, 192, 1)');
+          colors.hover.push('rgba(75, 192, 192, 0.9)');
+        } else if (venue === 'ACL') {
+          colors.background.push('rgba(255, 206, 86, 0.7)');
+          colors.border.push('rgba(255, 206, 86, 1)');
+          colors.hover.push('rgba(255, 206, 86, 0.9)');
+        } else if (venue === 'ICLR') {
+          colors.background.push('rgba(153, 102, 255, 0.7)');
+          colors.border.push('rgba(153, 102, 255, 1)');
+          colors.hover.push('rgba(153, 102, 255, 0.9)');
+        } else if (venue === 'NeurIPS') {
+          // Default color for NeurIPS in light theme
+          colors.background.push('rgba(255, 159, 64, 0.7)');
+          colors.border.push('rgba(255, 159, 64, 1)');
+          colors.hover.push('rgba(255, 159, 64, 0.9)');
+        }
+      });
+
+      return colors;
+    };
     
     // Conference/Journal review data by year
     const reviewData = {
       'AMIA': {
-        '2023': 4,
-        '2024': 3,
-        '2025': 4
+        '2025': 3
       },
       'ACM': {
-        '2023': 1,
-        '2024': 3,
-        '2025': 2
+        '2025': 1
       },
       'Health Informatics': {
-        '2023': 1,
-        '2024': 2,
-        '2025': 1
+        '2025': 2
       },
       'ACL': {
-        '2023': 1,
-        '2024': 3,
-        '2025': 1
+        '2025': 7
       },
       'ICLR': {
-        '2023': 0,
-        '2024': 1,
-        '2025': 0
+        '2025': 5
+      },
+      'NeurIPS':{
+        '2025': 3
       }
     };
 
@@ -309,35 +354,24 @@ nav_order: 2
     }
 
     if (ctx && detailCtx) {
+      const barColors = getBarColors();
       const chart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: Object.keys(reviewData),
+          labels: Object.keys(reviewData).map(label => {
+            // Split "Health Informatics" into two lines
+            if (label === 'Health Informatics') {
+              return ['Health', 'Informatics'];
+            }
+            return label;
+          }),
           datasets: [{
             label: 'Number of Reviews',
             data: chartData,
-            backgroundColor: [
-              'rgba(54, 162, 235, 0.7)',
-              'rgba(255, 99, 132, 0.7)',
-              'rgba(75, 192, 192, 0.7)',
-              'rgba(255, 206, 86, 0.7)',
-              'rgba(153, 102, 255, 0.7)'
-            ],
-            borderColor: [
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
+            backgroundColor: barColors.background,
+            borderColor: barColors.border,
             borderWidth: 2,
-            hoverBackgroundColor: [
-              'rgba(54, 162, 235, 0.9)',
-              'rgba(255, 99, 132, 0.9)',
-              'rgba(75, 192, 192, 0.9)',
-              'rgba(255, 206, 86, 0.9)',
-              'rgba(153, 102, 255, 0.9)'
-            ]
+            hoverBackgroundColor: barColors.hover
           }]
         },
         options: {
@@ -374,6 +408,14 @@ nav_order: 2
           scales: {
             y: {
               beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Number of Reviews',
+                font: {
+                  size: 14
+                },
+                color: getThemeColor('--global-text-color', '#000')
+              },
               ticks: {
                 stepSize: 1,
                 color: getThemeColor('--global-text-color', '#000')
@@ -383,8 +425,22 @@ nav_order: 2
               }
             },
             x: {
-              ticks: {
+              title: {
+                display: true,
+                text: 'Conference/Journal',
+                font: {
+                  size: 14
+                },
                 color: getThemeColor('--global-text-color', '#000')
+              },
+              ticks: {
+                color: getThemeColor('--global-text-color', '#000'),
+                font: {
+                  size: 14
+                },
+                maxRotation: 0,
+                minRotation: 0,
+                autoSkip: false
               },
               grid: {
                 color: getThemeColor('--global-divider-color', 'rgba(0,0,0,0.1)')
@@ -425,6 +481,43 @@ nav_order: 2
       
       // Initialize with total reviews
       showTotalReviews();
+
+      // Listen for theme changes to update tick colors
+      const updateChartsTheme = () => {
+        const textColor = getThemeColor('--global-text-color', '#000');
+        const gridColor = getThemeColor('--global-divider-color', 'rgba(0,0,0,0.1)');
+
+        // Update bar colors based on theme
+        const barColors = getBarColors();
+        chart.data.datasets[0].backgroundColor = barColors.background;
+        chart.data.datasets[0].borderColor = barColors.border;
+        chart.data.datasets[0].hoverBackgroundColor = barColors.hover;
+
+        // Update main chart
+        chart.options.scales.y.ticks.color = textColor;
+        chart.options.scales.y.grid.color = gridColor;
+        chart.options.scales.y.title.color = textColor;
+        chart.options.scales.x.ticks.color = textColor;
+        chart.options.scales.x.grid.color = gridColor;
+        chart.options.scales.x.title.color = textColor;
+        chart.options.plugins.title.color = textColor;
+        chart.update();
+
+        // Update detail chart if it exists
+        if (detailChart) {
+          detailChart.options.scales.y.ticks.color = textColor;
+          detailChart.options.scales.y.grid.color = gridColor;
+          detailChart.options.scales.x.ticks.color = textColor;
+          detailChart.update();
+        }
+      };
+
+      // Watch for theme changes
+      const observer = new MutationObserver(updateChartsTheme);
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme', 'class']
+      });
     }
   });
 </script>
